@@ -6,6 +6,9 @@
  * Time: 14:58
  * To change this template use File | Settings | File Templates.
  */
+/*
+ * Создание базового класса
+ */
 class CBaseJSONController
 {
 

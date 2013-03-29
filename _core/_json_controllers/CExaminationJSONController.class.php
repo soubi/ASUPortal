@@ -6,19 +6,27 @@
  * Time: 22:48
  * To change this template use File | Settings | File Templates.
  */
+/*
+ * Создание класса-наследника, содержащего информацию 
+ * об экзаменационных вопросах
+ */
 class CExaminationJSONController extends CBaseJSONController {
 	/**
 	 * Получение курсов, для которых есть экзаменационные вопросы
 	 * по указанной специальности
 	 */
     public function actionGetCources() {
+    //Получение введенного названия специальности
         $speciality = $_GET['speciality'];
         $res = array();
+        //Поиск совпадения имеющихся названий с введенным
         foreach (CExamManager::getAllQuestions()->getItems() as $q) {
             if ($q->speciality_id == $speciality) {
+            //При найденном совпадение запись курса
                 $res[$q->course] = $q->course;
             }
         }
+        //Вывод итогового массива
         echo json_encode($res);
     }
     /**
