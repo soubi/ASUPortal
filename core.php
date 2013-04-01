@@ -46,6 +46,7 @@
         CORE_CWD.CORE_DS.'_core'.CORE_DS.'_models'.CORE_DS."staff".CORE_DS,
         CORE_CWD.CORE_DS.'_core'.CORE_DS.'_models'.CORE_DS."taxonomy".CORE_DS,
         CORE_CWD.CORE_DS.'_core'.CORE_DS.'_models'.CORE_DS."calendar".CORE_DS,
+        CORE_CWD.CORE_DS.'_core'.CORE_DS.'_models'.CORE_DS."news".CORE_DS,
         CORE_CWD.CORE_DS.'_core'.CORE_DS.'_models'.CORE_DS."state_examination".CORE_DS,
         CORE_CWD.CORE_DS.'_core'.CORE_DS.'_models'.CORE_DS."rating".CORE_DS,
         CORE_CWD.CORE_DS.'_core'.CORE_DS.'_models'.CORE_DS."examination".CORE_DS,
@@ -54,6 +55,8 @@
         CORE_CWD.CORE_DS.'_core'.CORE_DS.'_models'.CORE_DS."acl".CORE_DS,
         CORE_CWD.CORE_DS.'_core'.CORE_DS.'_models'.CORE_DS."dashboard".CORE_DS,
         CORE_CWD.CORE_DS.'_core'.CORE_DS.'_models'.CORE_DS."configuration".CORE_DS,
+        CORE_CWD.CORE_DS.'_core'.CORE_DS.'_models'.CORE_DS."library".CORE_DS,
+        CORE_CWD.CORE_DS.'_core'.CORE_DS.'_models'.CORE_DS."grant".CORE_DS,
         SMARTY_DIR,
         PHPMAILER_DIR,
         PRINT_ENGINE_WORD
@@ -189,6 +192,10 @@
     define("TABLE_GENDERS", "pol");
     define("TABLE_USATU_ORDERS", "orders_dep");
     define("TABLE_USATU_ORDER_TYPES", "orders_dep_type");
+    define("TABLE_NEWS", "news");
+    define("TABLE_LIBRARY_DOCUMENTS", "documents");
+    define("TABLE_LIBRARY_FILES", "files");
+    define("TABLE_GRANTS", "grants");
 
     // суффиксы таблиц доступа
     define("ACL_ENTRIES", "_access_entries");
@@ -200,6 +207,7 @@
 
     // Типы участия на кафедре
     define("TYPE_PPS", "профессорско-преподавательский состав");
+    define("USER_TYPE_ADMIN", "администратор");
 
     // типы связей
     define("RELATION_HAS_ONE", "1");
@@ -234,3 +242,11 @@
     } else {
         define("ICON_THEME", CSettingsManager::getSettingValue("icon_theme"));
     }
+    /**
+     * Адрес подсистемы масштабирования изображений
+     */
+    define("IMAGE_RESIZER_URL", WEB_ROOT."_modules/_thumbnails/index.php");
+    /**
+     * Роли пользователей
+     */
+    define("ROLE_NEWS_ADD", "news_add");
